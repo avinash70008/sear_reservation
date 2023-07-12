@@ -90,14 +90,14 @@ const TrainReservation = () => {
 
   return (
     <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",marginBottom:"50px"}}>
-      <h1>Train Reservation</h1>
-      <div style={{marginBottom:"15px"}}>
+      <h1>Flight Reservation System</h1>
+      <div style={{marginBottom:"15px", display:"flex"}}>
         <div style={{display:"flex"}}>
-        <div style={{width:"30px",height:"30px",backgroundColor:"yellow"}}></div>
+        <div style={{width:"30px",height:"30px",backgroundColor:"green"}}></div>
         <div>-Unreserved Seats</div>
         </div>
         <div style={{display:"flex"}}>
-        <div style={{width:"30px",height:"30px",backgroundColor:"greenyellow"}}></div>
+        <div style={{width:"30px",height:"30px",backgroundColor:"red"}}></div>
         <div>-Reserved Seats</div>
         </div>
       </div>
@@ -110,14 +110,14 @@ const TrainReservation = () => {
           value={numSeats}
           onChange={(e) => setNumSeats(e.target.value)}
         />
-        <button style={{color:"black",width:"200px",marginLeft:"5px",height:"40px",fontSize:"25px"}}  onClick={reserveSeats}>Reserve Seats</button>
+        <button style={{color:"black",width:"200px",marginLeft:"5px",height:"40px",fontSize:"25px"}}  onClick={reserveSeats}>Book Seats</button>
         <button style={{color:"orange",width:"200px",marginLeft:"10px",height:"40px",fontSize:"25px"}} onClick={resetSeats}>Reset Seats</button>
       </div>
       <div style={{display:"flex",gap:"50px"}}>
       <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:"10px",marginTop:"50px",alignItems:"center"}}>
       {seats.map((seat) => (
           
-           <div key={seat._id} style={{width:"40px",height:"40px",backgroundColor:seat.isBooked ? "greenyellow":"yellow"}}>
+           <div key={seat._id} style={{width:"40px",height:"40px",backgroundColor:seat.isBooked ? "red":"green"}}>
           
               {/* <p>{seat.row}</p> */}
               <p>{seat.seatNumber}</p>
